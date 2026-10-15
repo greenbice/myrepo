@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ferocious Fighters — Collect Your Power</title>
+<style>
+:root{--violet:#a855f7;--electric:#6d28d9;--ink:#05030b;--silver:#e8e8f5;--muted:#b9b3cc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#05030b;color:#f7f4ff;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 18% 20%,#39106c 0,transparent 32%),radial-gradient(ellipse at 80% 38%,#26074e 0,transparent 34%),radial-gradient(ellipse at 50% 95%,#190735 0,transparent 45%),#030208}
+body:after{content:"";position:fixed;inset:-30%;z-index:-1;pointer-events:none;opacity:.32;background:repeating-conic-gradient(from 20deg at 50% 40%,transparent 0 8deg,#762aff 8.2deg 8.5deg,transparent 9deg 18deg);filter:blur(45px);animation:plasma 22s linear infinite}
+@keyframes plasma{to{transform:rotate(360deg) scale(1.1)}}
+header{position:sticky;top:0;z-index:10;background:#05030bea;backdrop-filter:blur(12px);border-bottom:1px solid #8b5cf666;display:flex;align-items:center;justify-content:space-between;padding:15px clamp(18px,5vw,72px)}
+.brand{font-weight:1000;font-style:italic;letter-spacing:-1.8px;font-size:clamp(18px,2.4vw,29px);color:#f5f2ff;text-shadow:0 0 16px #a855f7}
+nav{display:flex;gap:26px;align-items:center}nav a{color:#e6defa;text-decoration:none;font-size:12px;letter-spacing:2px;text-transform:uppercase}nav a:hover{color:#c084fc}
+.cart{border:1px solid #8b5cf6;background:#140a23;color:white;padding:9px 13px;border-radius:6px;cursor:pointer}
+.hero{text-align:center;padding:72px 18px 55px;position:relative;border-bottom:1px solid #8b5cf655;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,#5717a355,transparent 65%);pointer-events:none}
+.logo-wrap{position:relative;max-width:1050px;margin:auto}
+.claw{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%) rotate(-8deg);font-size:clamp(110px,19vw,230px);line-height:1;color:#bcb9d2;opacity:.38;z-index:0;text-shadow:0 0 10px #fff,0 0 30px #8b5cf6;letter-spacing:-30px;white-space:nowrap}
+h1{position:relative;z-index:1;margin:0;font-size:clamp(42px,8.2vw,104px);font-weight:1000;line-height:.98;letter-spacing:-5px;font-style:italic;text-transform:uppercase;color:#f5f3ff;-webkit-text-stroke:1px #d9d3f8;text-shadow:3px 3px 0 #5b21b6,0 0 24px #a855f7;filter:drop-shadow(0 6px 0 #10051f)}
+.tagline{position:relative;margin:28px 0 0;letter-spacing:clamp(3px,1vw,8px);font-size:12px;color:#e9ddff}
+.sub{color:var(--muted);max-width:620px;margin:18px auto 0;line-height:1.6;font-size:14px}
+.actions{display:flex;justify-content:center;gap:12px;margin-top:28px;flex-wrap:wrap}.btn{display:inline-block;text-decoration:none;border:1px solid #b77aff;color:white;background:linear-gradient(135deg,#6524a6,#250c42);padding:13px 22px;font-weight:800;letter-spacing:1.5px;font-size:12px;border-radius:4px;box-shadow:0 0 18px #7c3aed55;cursor:pointer}.btn.secondary{background:#07040d;border-color:#57416f}
+section{padding:54px clamp(18px,5vw,72px)}.section-title{text-align:center;text-transform:uppercase;letter-spacing:5px;font-size:18px;margin:0 0 10px}.section-intro{text-align:center;color:var(--muted);font-size:13px;margin:0 0 30px}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;max-width:1200px;margin:auto}
+.card{border:1px solid #8b5cf677;background:linear-gradient(160deg,#160a28dd,#05030bf2 65%);border-radius:9px;overflow:hidden;box-shadow:0 0 20px #581c8750;transition:transform .2s,border-color .2s}.card:hover{transform:translateY(-5px);border-color:#d8b4fe}
+.art{height:220px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 50% 45%,var(--glow),transparent 58%),linear-gradient(135deg,#0b0618,#1b0b30 55%,#05030b);border-bottom:1px solid #9d4edd66}
+.art:before,.art:after{content:"";position:absolute;width:180%;height:2px;background:var(--glow);box-shadow:0 0 18px var(--glow);transform:rotate(-32deg);opacity:.65}.art:after{transform:rotate(42deg);opacity:.3}
+.image-art img{width:100%;height:100%;object-fit:contain;position:relative;z-index:1;background:#05030b}.image-art{height:300px}.fallback{position:relative;z-index:1}.creature{position:relative;z-index:1;font-size:82px;filter:drop-shadow(0 0 14px var(--glow));text-align:center}.rank{position:absolute;top:10px;left:11px;color:#fbbf24;letter-spacing:3px;font-size:12px;z-index:2}.type{position:absolute;bottom:9px;left:11px;font-size:10px;letter-spacing:2px;color:#e9d5ff;z-index:2}
+.card-info{padding:15px}.card h3{margin:0 0 7px;font-size:15px;letter-spacing:1px;text-transform:uppercase}.desc{font-size:12px;line-height:1.5;color:#bdb4d0;min-height:36px}.stats{display:flex;justify-content:space-between;font-size:11px;color:#d8b4fe;margin:12px 0}.price-row{display:flex;align-items:center;justify-content:space-between;gap:8px}.price{font-weight:800}.add{border:1px solid #a855f7;background:#250b3c;color:white;padding:9px 11px;border-radius:4px;cursor:pointer;font-size:11px;font-weight:bold}.add:hover{background:#6d28d9}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1000px;margin:auto}.feature{border-top:1px solid #8b5cf666;padding:22px 16px;text-align:center;background:#10071b88}.feature .ico{font-size:25px;color:#c084fc}.feature h3{font-size:12px;letter-spacing:2px}.feature p{font-size:12px;color:var(--muted);line-height:1.5}
+.about{max-width:780px;text-align:center;margin:auto;color:#c9c0dc;line-height:1.8;font-size:14px}
+footer{border-top:1px solid #8b5cf655;text-align:center;padding:30px 18px;color:#a79abf;font-size:11px;letter-spacing:2px}
+.notice{display:none;position:fixed;right:18px;bottom:18px;background:#1b0a2b;border:1px solid #a855f7;padding:14px 18px;border-radius:8px;box-shadow:0 0 25px #6d28d977;z-index:20;font-size:13px}
+@media(max-width:850px){.products{grid-template-columns:repeat(2,minmax(0,1fr))}nav{gap:12px}nav a{font-size:10px;letter-spacing:1px}.hero{padding-top:58px}}
+@media(max-width:520px){header{flex-wrap:wrap;gap:12px}.brand{font-size:20px}nav{order:3;width:100%;justify-content:space-between}.products{gap:12px}.art{height:170px}.creature{font-size:62px}.card-info{padding:11px}.card h3{font-size:12px}.desc{font-size:11px}.features{grid-template-columns:1fr}.claw{letter-spacing:-18px}h1{letter-spacing:-2px}}
+</style>
+</head>
+<body>
+<header><a class="brand" href="#home" style="text-decoration:none">FEROCIOUS FIGHTERS</a><nav><a href="#home">Home</a><a href="#shop">Shop</a><a href="#about">About</a><a href="#contact">Contact</a></nav><button class="cart" onclick="showCart()">🛒 Basket <span id="count">0</span></button></header>
+<main>
+<section class="hero" id="home"><div class="logo-wrap"><div class="claw" aria-hidden="true">爪</div><h1>Ferocious<br>Fighters</h1></div><p class="tagline">REAL CARDS&nbsp; • &nbsp;REAL BATTLES&nbsp; • &nbsp;BE FEROCIOUS</p><p class="sub">Enter the arena. Discover fierce handmade collectible cards, built for collectors and fighters.</p><div class="actions"><a class="btn" href="#shop">EXPLORE THE CARDS ↓</a><a class="btn secondary" href="#about">OUR STORY</a></div></section>
+<section id="shop"><h2 class="section-title">Featured Fighters</h2><p class="section-intro">Fictional sample cards — swap these for photos of your own cards when ready.</p><div class="products" id="products"></div><p class="section-intro" style="margin-top:24px">Add more card images to the <code>cards</code> folder and list them in <code>cards/cards.json</code>.</p></section>
+<section><h2 class="section-title">Made to Stand Out</h2><p class="section-intro">A small collection with a fierce identity.</p><div class="features"><div class="feature"><div class="ico">✦</div><h3>HANDMADE CARDS</h3><p>Created with care, one fighter at a time.</p></div><div class="feature"><div class="ico">⚡</div><h3>BOLD DESIGNS</h3><p>Distinct characters, dramatic details and plasma-inspired style.</p></div><div class="feature"><div class="ico">爪</div><h3>JOIN THE FIGHT</h3><p>Find your favourite fighter and build your collection.</p></div></div></section>
+<section id="about"><h2 class="section-title">The Arena</h2><p class="about">Ferocious Fighters is a homemade collectible-card project. Every fighter has its own look, identity and stats. This is an early storefront concept; product names, prices and artwork below are fictional examples until your real cards are added.</p></section>
+<section id="contact"><h2 class="section-title">Contact the Arena</h2><p class="section-intro">Questions about the cards? Add your preferred contact email here before publishing.</p><div style="text-align:center"><a class="btn secondary" href="mailto:hello@ferociousfighters.example">CONTACT US</a></div></section>
+</main><footer>FEROCIOUS FIGHTERS · COLLECT. TRADE. BE FEROCIOUS.<br><br><span style="letter-spacing:0">© 2026 Ferocious Fighters — demo storefront</span></footer><div class="notice" id="notice"></div>
+<script>
+let cards=[];
+async function loadCards(){
+ try {
+  const response=await fetch('cards/cards.json');
+  if(!response.ok) throw new Error('Could not load cards/cards.json');
+  cards=await response.json();
+ } catch(e) {
+  cards=[
+   {name:"Octo Killer",image:"cards/octo-killer.jpg",type:"OCEAN / FIGHTER",stars:"★★★★★",hp:150,attack:"Drown",damage:70,price:4.99,glow:"#8b5cf6",desc:"Its gaze is death. Its touch is oblivion."},
+   {name:"Ferocious Fighters Cover",image:"cards/ferocious-fighters-cover.jpg",type:"COLLECTION COVER",stars:"★★★★★",hp:"—",attack:"—",damage:"—",price:0,glow:"#8b5cf6",desc:"The signature look of the Ferocious Fighters collection."}
+  ];
+ }
+ const root=document.getElementById('products');
+ root.innerHTML=cards.map((c,i)=>`<article class="card"><div class="art image-art" style="--glow:${c.glow||'#8b5cf6'}"><img src="${c.image}" alt="${c.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><div class="creature fallback" style="display:none">爪</div></div><div class="card-info"><h3>${c.name}</h3><div class="desc">${c.desc||''}</div><div class="stats"><span>${c.hp!==undefined?'HP '+c.hp:''}</span><span>${c.attack&&c.attack!=='—'?c.attack+' '+(c.damage??''):''}</span></div><div class="price-row"><span class="price">${Number(c.price)>0?'£'+Number(c.price).toFixed(2):'Price coming soon'}</span><button class="add" onclick="addCard(${i})" ${Number(c.price)<=0?'disabled title="Price not set"':''}>＋ ADD</button></div></div></article>`).join('');
+}
+loadCards();
+function addCard(i){basket.push(cards[i]);document.getElementById('count').textContent=basket.length;toast(cards[i].name+' added to your demo basket.')}
+function toast(msg){let n=document.getElementById('notice');n.textContent=msg;n.style.display='block';clearTimeout(window.noticeTimer);window.noticeTimer=setTimeout(()=>n.style.display='none',2800)}
+function showCart(){if(!basket.length){toast('Your basket is empty. Add a fighter to begin.');return}let total=basket.reduce((s,c)=>s+c.price,0);toast('Basket: '+basket.length+' card(s) · £'+total.toFixed(2)+' — demo only; checkout is not connected.')}
+</script></body></html>

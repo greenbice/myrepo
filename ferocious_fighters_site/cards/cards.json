@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Octo Killer",
+    "image": "cards/octo-killer.jpg",
+    "type": "OCEAN / FIGHTER",
+    "stars": "\u2605\u2605\u2605\u2605\u2605",
+    "hp": 150,
+    "attack": "Drown",
+    "damage": 70,
+    "price": 4.99,
+    "glow": "#8b5cf6",
+    "desc": "Its gaze is death. Its touch is oblivion."
+  },
+  {
+    "name": "Ferocious Fighters Cover",
+    "image": "cards/ferocious-fighters-cover.jpg",
+    "type": "COLLECTION COVER",
+    "stars": "\u2605\u2605\u2605\u2605\u2605",
+    "hp": "\u2014",
+    "attack": "\u2014",
+    "damage": "\u2014",
+    "price": 0,
+    "glow": "#8b5cf6",
+    "desc": "The signature look of the Ferocious Fighters collection."
+  }
+]

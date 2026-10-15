@@ -1,0 +1,23 @@
+FEROCIOUS FIGHTERS WEBSITE — ADDING YOUR CARDS
+
+1. Put each card image (JPG, PNG, or WebP) in this `cards` folder.
+2. Open `cards/cards.json` in a text editor.
+3. Add one object per card, separated by commas. Example:
+
+{
+  "name": "Octo Killer",
+  "image": "cards/octo-killer.jpg",
+  "type": "OCEAN / FIGHTER",
+  "stars": "★★★★★",
+  "hp": 150,
+  "attack": "Drown",
+  "damage": 70,
+  "price": 4.99,
+  "glow": "#8b5cf6",
+  "desc": "Its gaze is death. Its touch is oblivion."
+}
+
+Use the exact filename in the `image` field. Prices are examples; change them to your actual prices.
+The website loads card listings from `cards/cards.json`. Because browsers restrict reading a folder automatically, adding a photo alone will not list it—you also need to add its details to cards.json.
+For local testing, use a simple local web server rather than opening index.html directly, because fetch() may be blocked by the browser. Once hosted, the JSON file will load normally.
+Checkout is still a demo and does not take payments.
